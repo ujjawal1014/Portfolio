@@ -1,0 +1,43 @@
+/* About_Me */
+.About_Me {
+    /* width: 100%; */
+    height: 8em;
+    /* background-color: aqua; */
+
+    margin-bottom: 1em;
+    padding-left: 4%;
+    width: 96%;
+
+}
+
+/* About_Me_Content */
+.About_Me_Content {
+    display: flex;
+}
+
+.About_Me_Content_Bars {
+    width: 7em;
+    margin-right: 1em;
+
+
+}
+
+.About_Me_Content_Text {
+    width: 70em;
+    font-weight: 400;
+    color: #f8f9fa;
+    font-size: 1em;
+}
+
+hr {
+    height: 5%;
+    /* visibility: hidden; */
+    background-color: transparent;
+}
+
+/* About_Me_Heading */
+.About_Me_Heading {
+    font-size: 1.08em;
+    font-weight: 900;
+    color: #fe7f2d;
+}

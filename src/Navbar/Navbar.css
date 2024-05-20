@@ -1,0 +1,120 @@
+* {
+    padding: 0%;
+    margin: 0%;
+    /* color: #f8f9fa; */
+}
+
+
+
+body{
+    /* background-color: #E9F7F0; */
+    /* background-color: #F8EDE8; */
+    /* background-color: #F8E8F5; */
+    /* background-color: #34102E; */
+    /* background-color: #063808; */
+    /* background-color: #232200; */
+    /* background-color: #390202; */
+    /* background-color: #05004F; */
+    /* background-color: #14213D ; */
+    /* background-color: white ; */
+    background-color: #03071e;
+    
+
+}
+
+/* Navbar */
+.Navbar {
+    display: flex;
+    
+
+    /* justify-content: space-around; */
+    padding-left: 2%;
+    
+    
+    /* background-color: #00B8E6; */
+    background-color: black;
+    position: fixed;
+    width: 98% ;
+    height: 5.3rem;
+    /* padding-top: 0.8em; */
+    /* margin-top: 2%; */
+}
+
+
+
+
+
+/* Navbar_link */
+.Navbar_link {
+    display: flex;
+    width: 50em;
+    justify-content: space-around;
+
+}
+
+/* Navbar_link_Content */
+
+.Navbar_link_Content {
+    align-self: center;
+}
+
+.Navbar_link_Content a {
+    text-decoration: none;
+    font-size: 1.4em;
+    /* color: #e5e5e5; */
+    /* color: #9ea5ad; */
+    /* color: #854F6C; */
+    color: #522B5B;
+    font-weight: 700;
+    opacity: 1;
+
+
+
+}
+
+.Navbar_link_Content a:hover {
+
+    /* color: #ffffff; */
+    color: #000;
+    opacity: 1;
+
+
+
+
+}
+
+/* Navbar_logo */
+.Navbar_logo {
+    display: flex;
+    justify-content: space-between;
+    width: 22em;
+    margin-right: 10%;
+}
+
+.Navbar_Logo_image {
+    width: 4.5em;
+    height: 4.5em;
+    border-radius: 50%;
+}
+
+.Navbar_Logo_Text {
+    align-self: center;
+    font-size: 2.3em;
+    /* color: #fca311; */
+    /* color: #79330D; */
+    color: #ffba08;
+}
+
+/* Navbar_Bars */
+.Navbar_Bars{
+    color: #ffba08;
+    font-size: 2.3em;
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* .Navbar_Vertical{
+    display: none;
+} */

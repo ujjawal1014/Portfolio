@@ -1,0 +1,85 @@
+@media (min-width: 481px) and (max-width: 640px) {
+
+    /* Styles for large mobile devices */
+    /* Home */
+    .Home{
+        width: 39rem;
+        padding-left: 1em;
+    }
+    
+
+
+
+
+
+
+
+    /* Home_Text_Section_Name */
+    .Home_Text_Section_Name {
+        font-size: 0.8em;
+        width: 29.7em;
+
+
+    }
+
+
+
+    .Home_Text_Section_Name_Myname {
+        font-size: 1.5em;
+        /* color: #fca311; */
+
+
+    }
+
+    /* .Home_Text_Section {
+        padding-left: 5%;
+    } */
+
+    .Home_Photo_Section {
+        display: none;
+    }
+
+
+
+    /* Home_Text_Section_Links */
+    .Home_Text_Section_Links {
+        display: flex;
+        justify-content: space-between;
+        width: 7em;
+        margin-top: 1%;
+
+    }
+
+    .Home_Text_Section_Links a {
+        font-size: 1.3em;
+
+    }
+
+    .Home_Text_Section_Links a:hover {
+        color: #fca311 ;
+    }
+
+    .Home_Text_Section_Resume_Button {
+        margin-top: 0.5em;
+        background-color: transparent;
+        font-size: 0.6em;
+        color: #ffba08;
+
+        border: solid 2px #ffba08;
+        padding: 0.3em;
+        width: 5em;
+        border-top-left-radius: 15%;
+        /* border-bottom-left-radius: 15%; */
+        border-bottom-right-radius: 15%;
+        border-top-right-radius: 15%;
+
+    }
+
+    /* Home_Text_Section_Resume_Contact */
+    .Home_Text_Section_Resume_Contact {
+        display: flex;
+        width: 7em;
+        justify-content: space-between;
+
+    }
+}

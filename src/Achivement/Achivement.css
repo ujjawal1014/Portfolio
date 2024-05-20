@@ -1,0 +1,50 @@
+.Achivement {
+   
+    /* background-color: aqua; */
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+    padding-left: 4%;
+    width: 96% ;
+}
+
+.Achivement_Heading {
+    font-size: 1.42em;
+    color: #fe7f2d ;
+}
+
+.All_Achivement_Card {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+/* Achivement_Card */
+.Achivement_Card {
+    width: 22.46em;
+    /* padding: 1%; */
+    border: solid 0.4em black;
+    margin-right: 3em;
+    margin-top: 1em;
+}
+
+.Achivement_Card_Photo img {
+    width: 22.46em;
+}
+
+
+
+/* Achivement_Card_Text */
+.Achivement_Card_Text {
+    padding: 0.8em;
+    color: #f8f9fa;
+    text-align: center;
+}
+
+/* Achivement_Card_Text_Event_Name */
+.Achivement_Card_Text_Event_Name{
+    font-size: 1.6em;
+}
+.Achivement_Card_Text_About_Event{
+    font-size: 0.9em;
+    font-weight: 400;
+}

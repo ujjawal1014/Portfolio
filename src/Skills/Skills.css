@@ -1,0 +1,70 @@
+/* Skills */
+.Skills{
+    
+    /* background-color: aqua; */
+    margin-bottom: 1em;
+    padding-left: 4%;
+    width: 96% ;
+}
+
+
+/* Skills_Card */
+.Skills_Card{
+    width: 14em;
+    height: 12em;
+    border: solid 4px black;
+    margin-right: 26px;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    padding: 0.7em;
+    border-top-left-radius: 5%;
+    border-top-right-radius: 5%;
+    border-bottom-left-radius: 5%;
+    border-bottom-right-radius: 5%;
+    color: #f8f9fa;
+}
+.Skills_Card:hover{
+    background-color: #C9FF2E;
+    color: black;
+}
+
+/* Skills_Card_Icon */
+.Skills_Card_Icon{
+    font-size: 3.3em;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    color: blue;
+}
+
+.Skills_Card_Text_Heading{
+    font-size: 1.4em;
+    font-weight: 900;
+}
+
+.Skills_Card_Text_Data{
+    font-size: 0.9em;
+    font-weight: 500;
+}
+
+/* Skills_All_Card */
+.Skills_All_Card_WebD{
+    display: flex;
+    flex-wrap: wrap;
+}
+.Skills_All_Card_Language{
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+/* Skills_Heading */
+.Skills_Heading{
+    font-size: 1.08em;
+    color: #fe7f2d ;
+}
+
+.Skills_Type_Name{
+    font-size: 1.8em;
+    color: #a1c181;
+}

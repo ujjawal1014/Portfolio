@@ -1,0 +1,72 @@
+@media (max-width: 480px) {
+
+    /* Styles for small mobile devices */
+    /* Education */
+    .Education {
+        /* height: 70vh; */
+        width: 29rem !important;
+       
+        height: 70em !important;
+        margin-bottom: 1em;
+        padding-left: 1em !important;
+    }
+    .Edcuation_Card {
+        width: 13em !important;
+        margin-top: 2% !important;
+        
+        
+    }
+
+    /* Edcuation_Section_Heading */
+    .Edcuation_Section_Heading {
+        font-size: 0.8em !important;
+    }
+
+    /* Edcuation_Card_Photo */
+    .Edcuation_Card_Photo {
+        text-align: center!important;
+    }
+
+    .Edcuation_Card_Photo img {
+        width: 13em !important;
+        height: 13em !important;
+        /* height: 13vw; */
+        /* border-radius: 50%; */
+        border-top-left-radius: 5%;
+        border-top-right-radius: 5%;
+    }
+
+    /* Edcuation_Card */
+    
+
+    /* All_Education_Card */
+    .All_Education_Card {
+        display: flex !important;
+        justify-content: space-between !important;
+        flex-wrap: wrap !important;
+        margin-top: 0.1em !important;
+        width: 12em !important;
+        text-align: center !important;
+        margin-left: 0em !important;
+    }
+
+    /* Edcuation_Card_Text */
+    .Edcuation_Card_Text {
+        padding: 0.8em !important;
+    }
+
+    .Edcuation_Card_Text_Institute {
+        font-size: 1em !important;
+        height: 3em !important;
+    }
+
+    .Edcuation_Card_Text_Degree {
+        font-size: 0.7em !important;
+        height: 0em !important;
+
+    }
+
+
+
+
+}
