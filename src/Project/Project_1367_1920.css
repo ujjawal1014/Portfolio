@@ -1,0 +1,12 @@
+@media (min-width: 1367px) and (max-width: 1920px) {
+
+    /* Styles for large desktops */
+    .Project_Card_Tools_All_Icons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 22em;
+
+    }
+    
+}

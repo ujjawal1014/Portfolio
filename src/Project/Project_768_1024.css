@@ -1,0 +1,10 @@
+@media (min-width: 768px) and (max-width: 1024px) {
+    /* Styles for tablets */
+    .Project_Card_Tools_All_Icons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 22em;
+
+    }
+}

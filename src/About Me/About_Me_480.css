@@ -1,0 +1,38 @@
+@media (max-width: 480px) {
+
+    /* Styles for small mobile devices */
+    /* About_Me */
+    .About_Me {
+        height: 10em;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        /* margin-left: 1em; */
+        width: 29rem;
+        padding-left: 1em;
+    }
+
+    /* About_Me_Content */
+
+
+    .About_Me_Content_Bars {
+        display: none;
+
+
+
+    }
+
+    .About_Me_Content_Text {
+        width: 32em;
+        font-weight: 400;
+        font-size: 0.68em;
+    }
+
+
+
+    /* About_Me_Heading */
+    .About_Me_Heading {
+        font-size: 0.8em;
+        font-weight: 900;
+
+    }
+}

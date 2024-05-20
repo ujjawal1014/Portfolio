@@ -1,0 +1,62 @@
+/* Education */
+.Education{
+    height: 29em;
+    
+    /* background-color: aqua; */
+    
+    margin-bottom: 1em;
+    padding-left: 4%;
+    width: 96% ;
+}
+
+/* Edcuation_Section_Heading */
+.Edcuation_Section_Heading{
+    font-size: 1.08em;
+    color: #fe7f2d ;
+}
+
+/* Edcuation_Card_Photo */
+.Edcuation_Card_Photo{
+    text-align: center;
+}
+.Edcuation_Card_Photo img{
+    width: 16em;
+    height: 12em;
+    /* border-radius: 50%; */
+    border-top-left-radius: 5%;
+    border-top-right-radius: 5%;
+}
+/* Edcuation_Card */
+.Edcuation_Card{
+    width: 16em;
+    border: solid 0.3em black;
+    border-top-left-radius: 5%;
+    border-top-right-radius: 5%;
+    border-bottom-left-radius: 5%;
+    border-bottom-right-radius: 5%;
+    color: #f8f9fa;
+}
+/* All_Education_Card */
+.All_Education_Card{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1em;
+    width: 53em;
+    padding-left: 1em;
+}
+
+/* Edcuation_Card_Text */
+.Edcuation_Card_Text{
+    padding: 0.8em;
+}
+.Edcuation_Card_Text_Institute{
+    font-size: 1.3em;
+    height: 3em;
+}
+
+.Edcuation_Card_Text_Degree{
+    font-size: 1.1em;
+    height: 0.7em;
+
+}
+

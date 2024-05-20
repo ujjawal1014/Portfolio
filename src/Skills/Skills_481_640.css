@@ -1,0 +1,50 @@
+@media (min-width: 481px) and (max-width: 640px) {
+    /* Styles for large mobile devices */
+    /* Skills */
+
+    .Skills {
+        margin-bottom: 2em;
+        width: 39rem;
+        padding-left: 1em;
+    }
+
+    .Skills_Heading {
+        font-size: 0.8em;
+    }
+
+    .Skills_Type_Name {
+        font-size: 1em;
+    }
+
+    /* Skills_Card */
+    .Skills_Card {
+        width: 3.7em;
+        height: 3.7em;
+        border: solid 4px black;
+        margin-right: 2em;
+        margin-top: 0.5em;
+        padding: 0.2em;
+        border-top-left-radius: 5%;
+        border-top-right-radius: 5%;
+        border-bottom-left-radius: 5%;
+        border-bottom-right-radius: 5%;
+    }
+
+    /* Skills_Card_Icon */
+    .Skills_Card_Icon {
+        font-size: 2em;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        color: blue;
+    }
+
+    /* Skills_All_Card */
+    .Skills_Card_Text_Data {
+        display: none;
+    }
+
+    .Skills_Card_Text_Heading {
+        font-size: 0.6em;
+    }
+}

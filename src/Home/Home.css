@@ -1,0 +1,134 @@
+/* Home */
+
+.Home {
+    /* width: 100%; */
+    display: flex;
+    justify-content: space-between ;
+    padding-top: 5.3rem ;
+    padding-left: 4%;
+    width: 96% ;
+    /* background-color: #00CAFC; */
+
+}
+
+
+
+
+
+/* Home_Text_Section_Name */
+.Home_Text_Section_Name {
+    font-size: 1.5em;
+    /* width: 600px; */
+    text-align: center;
+    text-align: left;
+
+}
+
+.Home_Text_Section_Name_First_Line,
+.Home_Text_Section_Name_Second_Line {
+    margin-bottom: 0.25em;
+}
+
+.Home_Text_Section_Name_Myname {
+    font-size: 55px;
+    /* color: #fca311; */
+    /* color: #40FF40; */
+    color: #00CAFC;
+    /* color: #79330D; */
+    /* color: #005C73; */
+}
+
+.Home_Text_Section {
+    /* width: 580px; */
+    /* background-color: antiquewhite; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    padding-left: 0% ;
+    
+    color: #f8f9fa;
+
+
+
+
+}
+
+.Home_Photo_Section {
+    /* width: 500px; */
+    height: 28em;
+    margin-left: 9em;
+
+    /* background-color: antiquewhite; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* padding-right: 5%; */
+
+
+
+}
+
+.Home_Photo_Section img {
+    /* width: 500px; */
+    height: 28em;
+    border-radius: 30% 70% 0% 100% / 0% 0% 100% 100%;
+    /* background-color: #00B8E6; */
+    background-color: #41D9FF;
+
+    padding-right: 3em;
+    /* padding-top: 10%; */
+
+
+}
+
+/* Home_Text_Section_Links */
+.Home_Text_Section_Links {
+    display: flex;
+    justify-content: space-between;
+    width: 11em;
+    margin-top: 0.2em;
+    color: #f8f9fa ;
+
+
+}
+
+.Home_Text_Section_Links a {
+    font-size: 2.1em;
+    color: #f8f9fa ;
+}
+
+.Home_Text_Section_Links a:hover {
+    color: #ffba08;
+}
+
+.Home_Text_Section_Resume_Button {
+    margin-top: 0.5em;
+    /* background-color: #14213d; */
+    background-color: transparent;
+    font-size: 1.5em;
+    /* color: #fca311; */
+    /* color: #854F6C; */
+    color: #ffba08;
+    /* color: #f8f9fa; */
+    /* border: solid 2px #fca311; */
+    /* border: solid 2px #854F6C; */
+    border: solid 2px #ffba08;
+    padding: 4%;
+    width: 5em;
+    border-top-left-radius: 15%;
+    /* border-bottom-left-radius: 15%; */
+    border-bottom-right-radius: 15%;
+    border-top-right-radius: 15%;
+    border-bottom-left-radius: 15%;
+
+}
+
+/* Home_Text_Section_Resume_Contact */
+.Home_Text_Section_Resume_Contact {
+    display: flex;
+    width: 18em;
+    justify-content: space-between;
+
+}
