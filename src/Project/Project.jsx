@@ -1,8 +1,10 @@
 import Project_Card from "./Project_Card";
 import Project_Heading from "./Project_Heading";
-import Project_image from "./Project1.jpg";
-import { SiReact } from "react-icons/si";
-import { FaCss3Alt } from "react-icons/fa";
+import Project_image1 from "./Project1.jpg";
+import Project_image2 from "./Project2.jpg";
+import Project_image3 from "./Project3.jpg";
+import Project_image4 from "./Project4.jpg";
+
 import "./Project.css";
 import "./Project_480.css";
 import "./Project_481_640.css";
@@ -12,37 +14,85 @@ import "./Project_1025_1280.css";
 import "./Project_1281_1366.css";
 import "./Project_1367_1920.css";
 
-
 import { FaNodeJs } from "react-icons/fa";
+import { SiReact } from "react-icons/si";
+import { FaCss3Alt } from "react-icons/fa";
+import { FaHtml5 } from "react-icons/fa";
+import { DiJavascript } from "react-icons/di";
+import { SiMongodb } from "react-icons/si";
 
 export default function Project() {
   return (
     <>
-      <div className="Project">
+      <div className="Project" id="Projects">
         <Project_Heading />
         <Project_Card
           Projct_Number={1}
-          image={Project_image}
-          Tool1={<SiReact />}
-          Tool2={<FaNodeJs />}
-          Tool3={<FaCss3Alt />}
-          Tool4={<FaCss3Alt />}
+          MyRole={
+            "I've been working on our homepage using HTML, CSS, and JavaScript, ensuring it's responsive across devices. This involves optimizing layout and functionality for different screen sizes, enhancing the user experience."
+          }
+          Name={"Mudbbery Studio"}
+          image={Project_image1}
+          Tool1={<FaHtml5 />}
+          Tool2={<FaCss3Alt />}
+          Tool3={<DiJavascript />}
+          Color1={"#fb8500"}
+          Color2={"#48cae4"}
+          Color3={"#fee440"}
         />
         <Project_Card
-          Projct_Number={1}
-          image={Project_image}
-          Tool1={<SiReact />}
-          Tool2={<FaNodeJs />}
-          Tool3={<FaCss3Alt />}
-          Tool4={<FaCss3Alt />}
+          Projct_Number={2}
+          MyRole={
+            "For my portfolio website, I designed and developed everything from scratch using React for the frontend. Ensuring full responsiveness, I meticulously crafted the design and meticulously wrote the code to deliver a seamless experience across all devices."
+          }
+          Name={"My Portfolio"}
+          image={Project_image2}
+          Tool1={<FaHtml5 />}
+          Tool2={<FaCss3Alt />}
+          Tool3={<DiJavascript />}
+          Tool4={<SiReact />}
+          Tool5={<FaNodeJs />}
+          Color1={"#fb8500"}
+          Color2={"#48cae4"}
+          Color3={"#fee440"}
+          Color4={"#70d6ff"}
+          Color5={"#80b918"}
         />
         <Project_Card
-          Projct_Number={1}
-          image={Project_image}
-          Tool1={<SiReact />}
-          Tool2={<FaNodeJs />}
-          Tool3={<FaCss3Alt />}
-          Tool4={<FaCss3Alt />}
+          Projct_Number={3}
+          Name={"Missbakehouse Bakery"}
+          MyRole={
+            "I had the privilege of collaborating with MissBakeHouse, a burgeoning startup, as a freelancer. During this engagement, I meticulously crafted their entire website, harnessing the power of React for the frontend development."
+          }
+          image={Project_image3}
+          Tool2={<FaCss3Alt />}
+          Tool3={<DiJavascript />}
+          Tool4={<SiReact />}
+          Tool5={<FaNodeJs />}
+          Color2={"#48cae4"}
+          Color3={"#fee440"}
+          Color4={"#70d6ff"}
+          Color5={"#80b918"}
+        />
+        <Project_Card
+          Projct_Number={4}
+          MyRole={
+            "The Bnb website stands as one of my most prestigious projects to date. Leveraging MongoDB for the backend and a plethora of frameworks including React, Express, EJS, among others, I single-handedly developed the entire website from scratch."
+          }
+          Name={"BNB website"}
+          image={Project_image4}
+          Tool1={<FaHtml5 />}
+          Tool2={<FaCss3Alt />}
+          Tool3={<DiJavascript />}
+          Tool4={<SiReact />}
+          Tool5={<FaNodeJs />}
+          Tool6={<SiMongodb />}
+          Color1={"#fb8500"}
+          Color2={"#48cae4"}
+          Color3={"#fee440"}
+          Color4={"#70d6ff"}
+          Color5={"#80b918"}
+          Color6={"#007f5f"}
         />
       </div>
     </>

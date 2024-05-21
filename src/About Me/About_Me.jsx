@@ -13,7 +13,7 @@ import "./About_Me_1281_1366.css";
 export default function About_Me() {
   return (
     <>
-      <div className="About_Me">
+      <div className="About_Me" id="Home">
         <About_Me_Heading/>
         <About_Me_Content/>
       </div>

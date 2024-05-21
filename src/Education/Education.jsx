@@ -15,7 +15,7 @@ import "./Education.css";
 export default function Education() {
   return (
     <>
-      <div className="Education">
+      <div className="Education" id="Education">
         <div>
           <Education_Section_Heading />
         </div>
