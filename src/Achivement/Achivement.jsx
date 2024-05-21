@@ -14,7 +14,7 @@ import "./Achivement_1281_1366.css";
 export default function Achivement() {
   return (
     <>
-      <div className="Achivement">
+      <div className="Achivement" id="Achievement">
         <Achivement_Heading />
         <div className="All_Achivement_Card">
           <Achivement_Card />

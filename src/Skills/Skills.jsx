@@ -29,7 +29,7 @@ import "./Skills_1367_1920.css";
 export default function Skills() {
   return (
     <>
-      <div className="Skills">
+      <div className="Skills" id="Skills">
         <Skills_Heading />
         <br></br>
         <h1 className="Skills_Type_Name">1.Web Development</h1>
@@ -40,7 +40,7 @@ export default function Skills() {
             Icon={<FaHtml5 />}
             Icon_Name={"HTML"}
             Icon_Text={
-              "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur quaerat enim consectetur nam praesentium veritatis quas voluptatibus eos inventore ullam."
+              "During the early stages of my career, I devoted a significant amount of time to mastering HTML, and as a result, I have developed an exceptionally strong proficiency in it."
             }
           />
           <Skills_Card
@@ -48,7 +48,7 @@ export default function Skills() {
             Icon={<FaCss3Alt />}
             Icon_Name={"CSS"}
             Icon_Text={
-              "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur quaerat enim consectetur nam praesentium veritatis quas voluptatibus eos inventore ullam."
+              "Styling, being an immensely creative aspect of web development, is where I derive immense joy and fulfillment, dedicating ample time to mastering CSS."
             }
           />
           <Skills_Card
@@ -56,7 +56,7 @@ export default function Skills() {
             Icon={<TbBrandJavascript />}
             Icon_Name={"JAVASCRIPT"}
             Icon_Text={
-              "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur quaerat enim consectetur nam praesentium veritatis quas voluptatibus eos inventore ullam."
+              "Crafting logic is a realm that truly excites me, and integrating JavaScript into a website not only enhances its functionality but also aligns with the curriculum of my college courses."
             }
           />
           <Skills_Card
@@ -72,7 +72,7 @@ export default function Skills() {
             Icon={<FaNodeJs />}
             Icon_Name={"NodeJs"}
             Icon_Text={
-              "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur quaerat enim consectetur nam praesentium veritatis quas voluptatibus eos inventore ullam."
+              "In my MERN Stack projects, I've proficiently utilized Node.js and Express.js for the backend server, enabling swift and efficient operations."
             }
           />
           <Skills_Card
@@ -80,7 +80,7 @@ export default function Skills() {
             Icon={<SiMongodb />}
             Icon_Name={"MongoDb"}
             Icon_Text={
-              "I have worked on certain full stack projects where i have used MongoDB atlas for storing the data"
+              "I've actively contributed to a multitude of full stack projects, skillfully utilizing MongoDB Atlas as the cornerstone for reliable data storage and management."
             }
           />
           <Skills_Card
@@ -88,7 +88,7 @@ export default function Skills() {
             Icon={<SiMysql />}
             Icon_Name={"Sql"}
             Icon_Text={
-              "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur quaerat enim consectetur nam praesentium veritatis quas voluptatibus eos inventore ullam."
+              "SQL, a fundamental database technology taught in my courses, has been notably easy to grasp, and I've adeptly applied it in numerous projects with great success."
             }
           />
           <Skills_Card
@@ -96,7 +96,7 @@ export default function Skills() {
             Icon={<DiJqueryUiLogo />}
             Icon_Name={"Jquery"}
             Icon_Text={
-              "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur quaerat enim consectetur nam praesentium veritatis quas voluptatibus eos inventore ullam."
+              "Mastering jQuery considerably streamlined and enhanced my web development process, making it notably more efficient, effective, and enjoyable."
             }
           />
 
@@ -136,7 +136,7 @@ export default function Skills() {
             Icon={<FaJava />}
             Icon_Name={"Java"}
             Icon_Text={
-              "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur quaerat enim consectetur nam praesentium veritatis quas voluptatibus eos inventore ullam."
+              "Java has been the primary coding language on which I've dedicated a significant amount of time due to my keen interest in object-oriented programming concepts."
             }
           />
           <Skills_Card
@@ -144,7 +144,7 @@ export default function Skills() {
             Icon={<FaPython />}
             Icon_Name={"Python"}
             Icon_Text={
-              "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur quaerat enim consectetur nam praesentium veritatis quas voluptatibus eos inventore ullam."
+              "Python is notably one of the easiest languages for me, as I've been acquainted with it since my school days, which has fostered a strong foundation."
             }
           />
 
@@ -153,7 +153,7 @@ export default function Skills() {
             Icon={<TbBrandJavascript />}
             Icon_Name={"JAVASCRIPT"}
             Icon_Text={
-              "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur quaerat enim consectetur nam praesentium veritatis quas voluptatibus eos inventore ullam."
+              "Crafting logic is a realm that truly excites me, and integrating JavaScript into a website not only enhances its functionality but also aligns with the curriculum of my college courses."
             }
           />
         </div>
@@ -166,7 +166,7 @@ export default function Skills() {
             Icon={<HiMiniComputerDesktop />}
             Icon_Name={"Operating System"}
             Icon_Text={
-              "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur quaerat enim consectetur nam praesentium veritatis quas voluptatibus eos inventore ullam."
+              "I have acquired knowledge about various types of operating systems, understanding their efficiency and determining the most suitable OS for specific purposes and contexts."
             }
           />
           <Skills_Card
@@ -174,7 +174,7 @@ export default function Skills() {
             Icon={<IoGitNetwork />}
             Icon_Name={"Computer Network"}
             Icon_Text={
-              "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur quaerat enim consectetur nam praesentium veritatis quas voluptatibus eos inventore ullam."
+              "I have thoroughly delved into the intricacies of network layers and have successfully executed a diverse array of server and client-based projects as well."
             }
           />
 
@@ -183,7 +183,7 @@ export default function Skills() {
             Icon={<MdDataObject />}
             Icon_Name={"Oops"}
             Icon_Text={
-              "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur quaerat enim consectetur nam praesentium veritatis quas voluptatibus eos inventore ullam."
+              "Object-oriented programming (OOP) concepts are pivotal in my code and a compelling aspect of my field of interest, shaping my approach to software development."
             }
           />
         </div>

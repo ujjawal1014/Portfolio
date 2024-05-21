@@ -13,7 +13,7 @@ import "./Home_1281_1366.css";
 export default function Home() {
   return (
     <>
-      <div className="Home">
+      <div className="Home" id="Home">
         <Home_Text_Section />
         <Home_Photo_Section />
       </div>
