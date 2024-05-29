@@ -29,7 +29,7 @@ export default function Project() {
         <Project_Card
           Projct_Number={1}
           MyRole={
-            "I've been working on our homepage using HTML, CSS, and JavaScript, ensuring it's responsive across devices. This involves optimizing layout and functionality for different screen sizes, enhancing the user experience."
+            "I've crafted our homepage with HTML, CSS, and JavaScript for responsiveness across devices, optimizing layout and functionality for various screen sizes to enhance user experience."
           }
           Name={"Mudbbery Studio"}
           image={Project_image1}
@@ -43,7 +43,7 @@ export default function Project() {
         <Project_Card
           Projct_Number={2}
           MyRole={
-            "For my portfolio website, I designed and developed everything from scratch using React for the frontend. Ensuring full responsiveness, I meticulously crafted the design and meticulously wrote the code to deliver a seamless experience across all devices."
+            "For my portfolio website, I meticulously crafted everything using React for the frontend, ensuring full responsiveness for a seamless experience on all devices."
           }
           Name={"My Portfolio"}
           image={Project_image2}
@@ -62,7 +62,7 @@ export default function Project() {
           Projct_Number={3}
           Name={"Missbakehouse Bakery"}
           MyRole={
-            "I had the privilege of collaborating with MissBakeHouse, a burgeoning startup, as a freelancer. During this engagement, I meticulously crafted their entire website, harnessing the power of React for the frontend development."
+            "I collaborated with MissBakeHouse, a growing startup, as a freelancer. I meticulously crafted their entire website, utilizing React for the frontend development."
           }
           image={Project_image3}
           Tool2={<FaCss3Alt />}
@@ -77,7 +77,7 @@ export default function Project() {
         <Project_Card
           Projct_Number={4}
           MyRole={
-            "The Bnb website stands as one of my most prestigious projects to date. Leveraging MongoDB for the backend and a plethora of frameworks including React, Express, EJS, among others, I single-handedly developed the entire website from scratch."
+            "The Bnb website is one of my top projects. Using MongoDB for the backend and frameworks like React, Express, and EJS, I developed the entire site independently."
           }
           Name={"BNB website"}
           image={Project_image4}

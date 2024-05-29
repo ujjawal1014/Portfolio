@@ -1,5 +1,9 @@
 import Achivement_Card from "./Achivement_Card";
 import Achivement_Heading from "./Achivement_Heading";
+
+import myImage1 from "./MMNCT.jpg"
+import myImage2 from "./Gwoc.jpg"
+
 import "./Achivement.css"
 import "./Achivement_480.css";
 import "./Achivement_481_640.css";
@@ -17,8 +21,8 @@ export default function Achivement() {
       <div className="Achivement" id="Achievement">
         <Achivement_Heading />
         <div className="All_Achivement_Card">
-          <Achivement_Card />
-          <Achivement_Card />
+          <Achivement_Card image={myImage1}/>
+          <Achivement_Card image={myImage2}/>
           <Achivement_Card />
           <Achivement_Card />
           <Achivement_Card />
