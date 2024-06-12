@@ -56,6 +56,7 @@
 
     .Project_Card_Tools {
         display: flex;
+        justify-content: space-between;
         width: 21em;
         height: 4em;
     }
