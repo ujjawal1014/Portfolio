@@ -63,6 +63,7 @@
 
     .Project_Card_Tools_Text {
         display: flex;
+        margin-left: 1%;
         align-items: center;
         justify-content: start;
         font-size: 0.9em;
