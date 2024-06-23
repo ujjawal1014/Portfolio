@@ -2,8 +2,8 @@
     /* Styles for small mobile devices */
     /* Home */
     .Home{
-        width: 29rem;
-        padding-left: 1em;
+        width: 100%;
+        /* padding-left: 1em; */
     }
     
 

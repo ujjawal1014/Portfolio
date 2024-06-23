@@ -5,8 +5,8 @@
 
     .Project {
         margin-bottom: 2em;
-        width: 29rem;
-        padding-left: 1em;
+        width: 100%;
+        /* padding-left: 1em; */
     }
 
     /* Project_Heading */

@@ -4,11 +4,12 @@
     /* Education */
     .Education {
         /* height: 70vh; */
-        width: 29rem !important;
+        width: 100% !important;
+        /* padding-left: 1em; */
        
         height: 70em !important;
         margin-bottom: 1em;
-        padding-left: 1em !important;
+        /* padding-left: 1em !important; */
     }
     .Edcuation_Card {
         width: 13em !important;
