@@ -6,13 +6,6 @@ import Project_image3 from "./Project3.jpg";
 import Project_image4 from "./Project4.jpg";
 
 import "./Project.css";
-import "./Project_480.css";
-import "./Project_481_640.css";
-import "./Project_641_767.css";
-import "./Project_768_1024.css";
-import "./Project_1025_1280.css";
-import "./Project_1281_1366.css";
-import "./Project_1367_1920.css";
 
 import { FaNodeJs } from "react-icons/fa";
 import { SiReact } from "react-icons/si";
@@ -76,6 +69,46 @@ export default function Project() {
         />
         <Project_Card
           Projct_Number={4}
+          MyRole={
+            "The Bnb website is one of my top projects. Using MongoDB for the backend and frameworks like React, Express, and EJS, I developed the entire site independently."
+          }
+          Name={"BNB website"}
+          image={Project_image4}
+          Tool1={<FaHtml5 />}
+          Tool2={<FaCss3Alt />}
+          Tool3={<DiJavascript />}
+          Tool4={<SiReact />}
+          Tool5={<FaNodeJs />}
+          Tool6={<SiMongodb />}
+          Color1={"#fb8500"}
+          Color2={"#48cae4"}
+          Color3={"#fee440"}
+          Color4={"#70d6ff"}
+          Color5={"#80b918"}
+          Color6={"#007f5f"}
+        />
+        <Project_Card
+          Projct_Number={5}
+          MyRole={
+            "The Bnb website is one of my top projects. Using MongoDB for the backend and frameworks like React, Express, and EJS, I developed the entire site independently."
+          }
+          Name={"VSMCT WEBSITE ( CRICKET TOURNAMENT )"}
+          image={Project_image4}
+          Tool1={<FaHtml5 />}
+          Tool2={<FaCss3Alt />}
+          Tool3={<DiJavascript />}
+          Tool4={<SiReact />}
+          Tool5={<FaNodeJs />}
+          Tool6={<SiMongodb />}
+          Color1={"#fb8500"}
+          Color2={"#48cae4"}
+          Color3={"#fee440"}
+          Color4={"#70d6ff"}
+          Color5={"#80b918"}
+          Color6={"#007f5f"}
+        />
+        <Project_Card
+          Projct_Number={6}
           MyRole={
             "The Bnb website is one of my top projects. Using MongoDB for the backend and frameworks like React, Express, and EJS, I developed the entire site independently."
           }

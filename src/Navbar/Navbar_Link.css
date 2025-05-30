@@ -1,0 +1,187 @@
+.Navbar_link {
+    display: flex;
+    align-items: center;
+    gap: clamp(1.5em, 2vw, 2.5em);
+    margin-right: clamp(1em, 2vw, 2em);
+}
+
+.Navbar_link a {
+    color: #f8f9fa;
+    text-decoration: none;
+    font-size: clamp(0.9em, 1vw, 1.1em);
+    font-weight: 500;
+    position: relative;
+    padding: 0.5em 0;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.Navbar_link a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #ffba08;
+    transition: width 0.3s ease;
+}
+
+.Navbar_link a:hover {
+    color: #ffba08;
+    transform: translateY(-2px);
+}
+
+.Navbar_link a:hover::after {
+    width: 100%;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    z-index: 99999;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hamburger span {
+    display: block;
+    position: absolute;
+    height: 2px;
+    width: 24px;
+    background: #f8f9fa;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    left: 8px;
+}
+
+.hamburger span:nth-child(1) {
+    top: 12px;
+}
+
+.hamburger span:nth-child(2) {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.hamburger span:nth-child(3) {
+    bottom: 12px;
+}
+
+.hamburger.active {
+    background: rgba(15, 52, 96, 1);
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+    background: #ffba08;
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+    background: #ffba08;
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+        position: relative;
+        left: auto;
+        top: auto;
+        background: rgba(26, 26, 46, 1);
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+        margin-right: 1em;
+        align-items: center;
+        justify-content: center;
+        z-index: 99999;
+    }
+
+    .hamburger:hover {
+        background: rgba(22, 33, 62, 1);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+        transform: scale(1.05);
+    }
+
+    .hamburger.active {
+        background: rgba(15, 52, 96, 1);
+    }
+
+    .Navbar_link {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(26, 26, 46, 1);
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        justify-content: center;
+        padding: 2em;
+        gap: 1.5em;
+        z-index: 99998;
+        animation: fadeIn 0.3s ease-out forwards;
+    }
+
+    .Navbar_link.active {
+        display: flex;
+        z-index: 99998;
+    }
+
+    .Navbar_link a {
+        font-size: 1.4em;
+        opacity: 0;
+        transform: translateY(30px);
+        text-align: center;
+        padding: 0.5em 1em;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+    }
+
+    .Navbar_link a:hover {
+        background: rgba(255, 186, 8, 0.1);
+        transform: translateY(-2px);
+    }
+
+    .Navbar_link.active a {
+        animation: slideUp 0.4s ease-out forwards;
+        animation-delay: calc(var(--index) * 0.08s);
+    }
+
+    .Navbar_link a::after {
+        display: none;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+} 

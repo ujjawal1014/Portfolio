@@ -1,43 +1,128 @@
 /* About_Me */
 .About_Me {
-    /* width: 100%; */
-    height: 8em;
-    /* background-color: aqua; */
+    min-height: 8em;
+    padding: clamp(2em, 4vw, 4em) clamp(2%, 4vw, 4%) clamp(4em, 6vw, 6em);
+    width: 100%;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    position: relative;
+    overflow: hidden;
+}
 
-    margin-bottom: 1em;
-    padding-left: 4%;
-    width: 96%;
+.About_Me::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(255, 186, 8, 0.08) 0%, transparent 50%);
+    pointer-events: none;
+}
 
+/* About_Me_Heading */
+.About_Me_Heading {
+    font-size: clamp(1.8em, 2.2vw, 2.2em);
+    color: #ffba08;
+    text-align: center;
+    margin-bottom: clamp(1em, 1.5vw, 1.5em);
+    text-shadow: 0 0 10px rgba(255, 186, 8, 0.3);
+    animation: fadeInDown 1s ease-out;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* About_Me_Content */
 .About_Me_Content {
     display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    animation: fadeInUp 1s ease-out;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: clamp(1em, 2vw, 2em);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    flex-direction: column;
+    align-items: center;
+}
+
+.About_Me_Content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    border-color: #ffba08;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .About_Me_Content_Bars {
-    width: 7em;
-    margin-right: 1em;
-
-
+    width: clamp(5em, 7vw, 7em);
+    margin-right: 0;
+    margin-bottom: clamp(1em, 1.5vw, 1.5em);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .About_Me_Content_Text {
-    width: 70em;
+    flex: 1;
     font-weight: 400;
     color: #f8f9fa;
-    font-size: 1em;
+    font-size: clamp(1.1em, 1.3vw, 1.3em);
+    line-height: 1.6;
+    opacity: 0.9;
+    text-align: center;
 }
 
 hr {
     height: 5%;
-    /* visibility: hidden; */
     background-color: transparent;
+    margin: 2em 0;
 }
 
-/* About_Me_Heading */
-.About_Me_Heading {
-    font-size: 1.08em;
-    font-weight: 900;
-    color: #fe7f2d;
+/* Responsive Design */
+@media (min-width: 769px) {
+    .About_Me_Content {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .About_Me_Content_Bars {
+        width: clamp(5em, 7vw, 7em);
+        margin-right: clamp(1em, 1.5vw, 1.5em);
+        margin-bottom: 0;
+    }
+
+    .About_Me_Content_Text {
+        text-align: left;
+    }
+}
+
+/* Add support for ultra-wide screens */
+@media (min-width: 1921px) {
+    .About_Me {
+        padding: clamp(3em, 5vw, 5em) 5% clamp(4em, 6vw, 6em);
+    }
+
+    .About_Me_Content {
+        max-width: 1400px;
+    }
 }

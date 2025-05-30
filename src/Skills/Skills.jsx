@@ -18,13 +18,6 @@ import { MdDataObject } from "react-icons/md";
 
 import Skills_Heading from "./Skills_Heading";
 import "./Skills.css";
-import "./Skills_480.css";
-import "./Skills_481_640.css";
-import "./Skills_641_767.css";
-import "./Skills_768_1024.css";
-import "./Skills_1025_1280.css";
-import "./Skills_1281_1366.css";
-import "./Skills_1367_1920.css";
 
 export default function Skills() {
   return (

@@ -1,126 +1,247 @@
 * {
-    padding: 0%;
-    margin: 0%;
-    /* color: #f8f9fa; */
-    font-weight: 100;
+    padding: 0;
+    margin: 0;
+    font-weight: 400;
+    box-sizing: border-box;
 }
 
 html {
     scroll-behavior: smooth;
 }
 
-
-
 body {
-    /* background-color: #E9F7F0; */
-    /* background-color: #F8EDE8; */
-    /* background-color: #F8E8F5; */
-    /* background-color: #34102E; */
-    /* background-color: #063808; */
-    /* background-color: #232200; */
-    /* background-color: #390202; */
-    /* background-color: #05004F; */
-    /* background-color: #14213D ; */
-    /* background-color: white ; */
     background-color: #03071e;
-    /* background-color: #0b2ce5; */
-
-
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 /* Navbar */
 .Navbar {
-    display: flex;
-
-
-    /* justify-content: space-around; */
-    padding-left: 2%;
-
-
-    /* background-color: #00B8E6; */
-    background-color: black;
     position: fixed;
-    width: 98%;
-    height: 5.3rem;
-    /* padding-top: 0.8em; */
-    /* margin-top: 2%; */
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: clamp(0.8em, 1.5vw, 1.2em) clamp(2%, 4vw, 4%);
+    background: rgba(26, 26, 46, 0.8);
+    backdrop-filter: blur(10px);
+    z-index: 100;
+    transition: all 0.3s ease;
 }
 
+.Navbar.scrolled {
+    background: rgba(26, 26, 46, 0.95);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
 
+/* Navbar_Logo */
+.Navbar_logo {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    z-index: 100;
+}
 
+.Navbar_Logo_Photo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid #ffba08;
+    box-shadow: 0 0 10px rgba(255, 186, 8, 0.3);
+}
 
+.Navbar_Logo_Photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.Navbar_Logo_Text {
+    color: #ffba08;
+    font-size: clamp(1.2em, 1.5vw, 1.5em);
+    font-weight: 600;
+    text-shadow: 0 0 8px rgba(255, 186, 8, 0.4);
+    transition: all 0.3s ease;
+}
+
+.Navbar_Logo_Text:hover {
+    text-shadow: 0 0 12px rgba(255, 186, 8, 0.6);
+}
 
 /* Navbar_link */
 .Navbar_link {
     display: flex;
-    width: 50em;
+    width: clamp(30em, 50em, 60em);
     justify-content: space-around;
-
+    align-items: center;
 }
 
 /* Navbar_link_Content */
-
 .Navbar_link_Content {
     align-self: center;
+    position: relative;
 }
 
 .Navbar_link_Content a {
     text-decoration: none;
-    font-size: 1.4em;
-    /* color: #e5e5e5; */
-    /* color: #9ea5ad; */
-    /* color: #854F6C; */
-    color: #522B5B;
-    font-weight: 700;
-    opacity: 0.7;
-
-
-
+    font-size: clamp(1.1em, 1.4em, 1.6em);
+    color: #f8f9fa;
+    font-weight: 500;
+    opacity: 0.85;
+    transition: all 0.3s ease;
+    padding: clamp(0.3em, 0.5em, 0.7em) clamp(0.7em, 1em, 1.2em);
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
 }
 
 .Navbar_link_Content a:hover {
-
-    /* color: #ffffff; */
-    /* color: #000; */
     opacity: 1;
-
-
-
-
-}
-
-/* Navbar_logo */
-.Navbar_logo {
-    display: flex;
-    justify-content: space-between;
-    width: 22em;
-    margin-right: 10%;
-}
-
-.Navbar_Logo_image {
-    width: 4.5em;
-    height: 4.5em;
-    border-radius: 50%;
-}
-
-.Navbar_Logo_Text {
-    align-self: center;
-    font-size: 2.3em;
-    /* color: #fca311; */
-    /* color: #79330D; */
     color: #ffba08;
+    background-color: rgba(255, 186, 8, 0.15);
+    transform: translateY(-3px);
+}
+
+.Navbar_link_Content a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #ffba08;
+    transition: transform 0.4s ease-in-out;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+}
+
+.Navbar_link_Content a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
 }
 
 /* Navbar_Bars */
 .Navbar_Bars {
     color: #ffba08;
-    font-size: 2.3em;
+    font-size: clamp(1.8em, 2.3em, 2.8em);
     visibility: hidden;
-    display: flex;
-    flex-direction: column;
     justify-content: center;
+    cursor: pointer;
+    transition: transform 0.4s ease-in-out, color 0.4s ease-in-out;
+    z-index: 1001;
+    transform: rotate(0deg);
 }
 
-/* .Navbar_Vertical{
+.Navbar_Bars:hover {
+    color: #ffd700;
+}
+
+/* Rotate hamburger when vertical menu is active */
+.Navbar_Vertical.active ~ .Navbar .Navbar_Bars {
+    transform: rotate(90deg);
+}
+
+/* Navbar_Vertical */
+.Navbar_Vertical {
     display: none;
-} */
+    position: fixed;
+    top: clamp(4rem, 5.3rem, 6rem);
+    left: 0;
+    width: 100%;
+    height: calc(100vh - clamp(4rem, 5.3rem, 6rem));
+    background: linear-gradient(45deg, rgba(26, 26, 46, 0.98), rgba(22, 33, 62, 0.98), rgba(15, 52, 96, 0.98));
+    backdrop-filter: blur(15px);
+    padding: clamp(1rem, 1.5rem, 2rem);
+    transform: translateY(-100%);
+    transition: transform 0.4s ease-in-out;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    overflow-y: auto;
+}
+
+.Navbar_Vertical.active {
+    transform: translateY(0);
+}
+
+.Navbar_Vertical .Navbar_link_Content a {
+    font-size: clamp(1.4em, 1.8em, 2em);
+    padding: 0.8em 0;
+    width: 100%;
+    text-align: center;
+}
+
+.Navbar_Vertical .Navbar_link_Content a::after {
+    width: 60%;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .Navbar_link {
+        width: clamp(25em, 40em, 50em);
+    }
+}
+
+@media (max-width: 768px) {
+    .Navbar {
+        padding: 0.8em 1em;
+        justify-content: flex-start;
+    }
+
+    .Navbar_logo {
+        position: absolute;
+        right: 1em;
+        top: 50%;
+        transform: translateY(-50%);
+        gap: 0.5em;
+        z-index: 101;
+    }
+
+    .Navbar_Logo_Photo {
+        width: 35px;
+        height: 35px;
+    }
+
+    .Navbar_Logo_Text {
+        font-size: 1.1em;
+    }
+
+    .Navbar_link {
+        display: none;
+    }
+    
+    .Navbar_Bars {
+        visibility: visible;
+        display: block;
+        transform-origin: center;
+    }
+    
+    .Navbar_Vertical {
+        display: flex;
+    }
+}
+
+@media (max-width: 480px) {
+    .Navbar_logo {
+        width: clamp(10em, 15em, 18em);
+    }
+
+    .Navbar_Logo_Text {
+        font-size: clamp(1.5em, 1.8em, 2em);
+    }
+}
+
+/* Add support for ultra-wide screens */
+@media (min-width: 1921px) {
+    .Navbar {
+        padding: 0 3%;
+    }
+    
+    .Navbar_link {
+        width: 60em;
+    }
+}

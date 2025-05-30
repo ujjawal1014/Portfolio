@@ -1,17 +1,9 @@
 import Education_Card from "./Education_Card";
 import Svnit from "./SVNIT.jpg";
 import Kvs from "./KVS.jpg";
-import "./Education_480.css";
-import "./Education_481_640.css";
-import "./Education_641_767.css";
-import "./Education_768_1024.css";
-import "./Education_1025_1280.css";
-import "./Education_1281_1366.css";
-// import "./Education_1367_1920.css";
-
-
 import Education_Section_Heading from "./Education_Section_Heading";
 import "./Education.css";
+
 export default function Education() {
   return (
     <>

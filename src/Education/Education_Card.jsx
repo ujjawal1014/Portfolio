@@ -4,7 +4,6 @@ export default function Education_Card({
   Image,
   Institue,
   Degree,
-  Percentage,
 }) {
   return (
     <>
@@ -13,7 +12,6 @@ export default function Education_Card({
         <Education_Card_Text
           Institue={Institue}
           Degree={Degree}
-          Percentage={Percentage}
         />
       </div>
     </>

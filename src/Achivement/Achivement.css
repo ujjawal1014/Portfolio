@@ -1,50 +1,210 @@
+/* Achievement */
 .Achivement {
-   
-    /* background-color: aqua; */
-    padding-bottom: 1em;
-    margin-bottom: 1em;
-    padding-left: 4%;
-    width: 96% ;
+    padding: clamp(1.5em, 5vw, 4em) clamp(1%, 4vw, 4%);
+    width: 100%;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    position: relative;
+    overflow: hidden;
 }
 
+.Achivement::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(255, 186, 8, 0.08) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+/* Achievement_Heading */
 .Achivement_Heading {
-    font-size: 1.42em;
-    color: #fe7f2d ;
+    font-size: clamp(2.2em, 2.8vw, 2.8em);
+    color: #ffba08;
+    text-align: center;
+    margin-bottom: clamp(1em, 3vw, 1.5em);
+    text-shadow: 0 0 10px rgba(255, 186, 8, 0.3);
+    animation: fadeInDown 1s ease-out;
 }
 
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* All_Achievement_Card */
 .All_Achivement_Card {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
+    gap: clamp(1em, 2vw, 2em);
+    margin: clamp(1em, 2vw, 2em) auto;
+    max-width: 1200px;
+    animation: fadeInUp 1s ease-out;
 }
 
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
-/* Achivement_Card */
+/* Achievement_Card */
 .Achivement_Card {
-    width: 22.46em;
-    /* padding: 1%; */
-    border: solid 0.4em black;
-    margin-right: 3em;
-    margin-top: 1em;
+    width: clamp(280px, 20em, 350px);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    color: #f8f9fa;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out forwards;
+    animation-delay: calc(var(--card-index, 0) * 0.2s);
+}
+
+.Achivement_Card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    border-color: #ffba08;
+    background: rgba(255, 186, 8, 0.1);
+}
+
+/* Achievement_Card_Photo */
+.Achivement_Card_Photo {
+    text-align: center;
+    overflow: hidden;
 }
 
 .Achivement_Card_Photo img {
-    width: 22.46em;
+    width: 100%;
+    height: clamp(12em, 14em, 16em);
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    opacity: 0;
+    animation: zoomIn 0.8s ease-out 0.5s forwards;
 }
 
+.Achivement_Card:hover .Achivement_Card_Photo img {
+    transform: scale(1.05);
+}
 
-
-/* Achivement_Card_Text */
+/* Achievement_Card_Text */
 .Achivement_Card_Text {
-    padding: 0.8em;
-    color: #f8f9fa;
-    text-align: center;
+    padding: clamp(1em, 1.2em, 1.5em);
 }
 
-/* Achivement_Card_Text_Event_Name */
-.Achivement_Card_Text_Event_Name{
-    font-size: 1.6em;
+.Achivement_Card_Text_Event_Name {
+    font-size: clamp(1.3em, 1.5vw, 1.5em);
+    color: #ffba08;
+    margin-bottom: 0.8em;
+    font-weight: 600;
+    line-height: 1.4;
+    opacity: 0;
+    animation: slideInDown 0.8s ease-out 0.7s forwards;
 }
-.Achivement_Card_Text_About_Event{
-    font-size: 0.9em;
+
+.Achivement_Card_Text_About_Event {
+    font-size: clamp(1em, 1.1vw, 1.1em);
     font-weight: 400;
+    line-height: 1.6;
+    color: #f8f9fa;
+    opacity: 0;
+    animation: fadeIn 0.8s ease-out 0.9s forwards;
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 0.9;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .All_Achivement_Card {
+        gap: clamp(1em, 1.5em, 2em);
+    }
+}
+
+@media (max-width: 768px) {
+    .Achivement_Card {
+        width: clamp(250px, 18em, 300px);
+    }
+    
+    .Achivement_Heading {
+        font-size: 2.2em;
+        margin-bottom: 1em;
+    }
+    
+    .Achivement_Card_Text_Event_Name {
+        font-size: 1.3em;
+    }
+    
+    .Achivement_Card_Text_About_Event {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .Achivement_Card {
+        width: 100%;
+        max-width: 280px;
+    }
+    
+    .Achivement_Card_Text_Event_Name {
+        font-size: 1.2em;
+    }
+    
+    .Achivement_Card_Text_About_Event {
+        font-size: 0.95em;
+    }
+}
+
+/* Add support for ultra-wide screens */
+@media (min-width: 1921px) {
+    .Achivement {
+        padding: 5em 5%;
+    }
+    
+    .All_Achivement_Card {
+        max-width: 1800px;
+    }
 }
