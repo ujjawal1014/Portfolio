@@ -4,6 +4,7 @@ import Project_image1 from "./Project1.jpg";
 import Project_image2 from "./Project2.jpg";
 import Project_image3 from "./Project3.jpg";
 import Project_image4 from "./Project4.jpg";
+import Project_image5 from "./Project5.jpg";
 
 import "./Project.css";
 
@@ -16,9 +17,11 @@ import { SiMongodb } from "react-icons/si";
 
 export default function Project() {
   return (
-    <>
-      <div className="Project" id="Projects">
-        <Project_Heading />
+    <section className="Project" id="project">
+      <div className="Project_Heading">
+        <h2>Projects</h2>
+      </div>
+      <div className="Project_Grid">
         <Project_Card
           Projct_Number={1}
           MyRole={
@@ -32,6 +35,7 @@ export default function Project() {
           Color1={"#fb8500"}
           Color2={"#48cae4"}
           Color3={"#fee440"}
+          ProjectLink="https://mudbberystudio.com"
         />
         <Project_Card
           Projct_Number={2}
@@ -50,6 +54,7 @@ export default function Project() {
           Color3={"#fee440"}
           Color4={"#70d6ff"}
           Color5={"#80b918"}
+          ProjectLink="https://your-portfolio-url.com"
         />
         <Project_Card
           Projct_Number={3}
@@ -66,6 +71,7 @@ export default function Project() {
           Color3={"#fee440"}
           Color4={"#70d6ff"}
           Color5={"#80b918"}
+          ProjectLink="https://missbakehouse.com"
         />
         <Project_Card
           Projct_Number={4}
@@ -86,14 +92,15 @@ export default function Project() {
           Color4={"#70d6ff"}
           Color5={"#80b918"}
           Color6={"#007f5f"}
+          ProjectLink="https://bnb-website.com"
         />
         <Project_Card
           Projct_Number={5}
           MyRole={
-            "The Bnb website is one of my top projects. Using MongoDB for the backend and frameworks like React, Express, and EJS, I developed the entire site independently."
+            "The service connect is not just a project its a startup which is based on the idea of providing a platform for the people to connect with the service providers and to get the services at their doorstep."
           }
           Name={"VSMCT WEBSITE ( CRICKET TOURNAMENT )"}
-          image={Project_image4}
+          image={Project_image5}
           Tool1={<FaHtml5 />}
           Tool2={<FaCss3Alt />}
           Tool3={<DiJavascript />}
@@ -106,9 +113,31 @@ export default function Project() {
           Color4={"#70d6ff"}
           Color5={"#80b918"}
           Color6={"#007f5f"}
+          ProjectLink="https://vsmct-cricket.com"
         />
         <Project_Card
           Projct_Number={6}
+          MyRole={
+            "The service connect is not just a project its a startup which is based on the idea of providing a platform for the people to connect with the service providers and to get the services at their doorstep."
+          }
+          Name={"Service-Connect"}
+          image={Project_image5}
+          Tool1={<FaHtml5 />}
+          Tool2={<FaCss3Alt />}
+          Tool3={<DiJavascript />}
+          Tool4={<SiReact />}
+          Tool5={<FaNodeJs />}
+          Tool6={<SiMongodb />}
+          Color1={"#fb8500"}
+          Color2={"#48cae4"}
+          Color3={"#fee440"}
+          Color4={"#70d6ff"}
+          Color5={"#80b918"}
+          Color6={"#007f5f"}
+          ProjectLink="https://service-connect-1fsd.onrender.com/"
+        />
+        <Project_Card
+          Projct_Number={7}
           MyRole={
             "The Bnb website is one of my top projects. Using MongoDB for the backend and frameworks like React, Express, and EJS, I developed the entire site independently."
           }
@@ -126,8 +155,9 @@ export default function Project() {
           Color4={"#70d6ff"}
           Color5={"#80b918"}
           Color6={"#007f5f"}
+          ProjectLink="https://bnb-website-2.com"
         />
       </div>
-    </>
+    </section>
   );
 }

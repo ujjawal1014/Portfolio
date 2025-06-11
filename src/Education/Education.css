@@ -1,9 +1,9 @@
 /* Education */
 .Education {
-    min-height: clamp(25em, 29em, 35em);
-    padding: clamp(1.5em, 4vw, 4em) clamp(1%, 4vw, 4%) clamp(4em, 6vw, 6em);
+    min-height: 100vh;
     width: 100%;
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    padding: clamp(6rem, 8vw, 8rem) clamp(2%, 4vw, 4%);
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
     position: relative;
     overflow: hidden;
 }
@@ -16,24 +16,30 @@
     right: 0;
     bottom: 0;
     background: 
-        radial-gradient(circle at 20% 20%, rgba(255, 186, 8, 0.08) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(255, 186, 8, 0.08) 0%, transparent 50%);
+        radial-gradient(circle at 20% 20%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(236, 72, 153, 0.15) 0%, transparent 50%);
     pointer-events: none;
-    animation: gradientShift 15s ease-in-out infinite alternate;
+    animation: gradientShift 15s ease infinite;
 }
 
 /* Edcuation_Section_Heading */
-.Edcuation_Section_Heading {
-    font-size: clamp(1.8em, 2.2vw, 2.2em);
-    color: #ffba08;
+.Education_Section_Heading {
     text-align: center;
-    margin-bottom: clamp(1em, 1.5em, 2em);
-    text-shadow: 0 0 10px rgba(255, 186, 8, 0.3);
-    animation: fadeInDown 1s ease-out;
+    margin-bottom: 3rem;
     position: relative;
+    z-index: 1;
 }
 
-.Edcuation_Section_Heading::after {
+.Education_Section_Heading h2 {
+    font-size: clamp(2rem, 2.5vw, 2.5rem);
+    background: linear-gradient(45deg, #6366f1, #ec4899);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1rem;
+    animation: fadeInDown 1s ease-out forwards;
+}
+
+.Education_Section_Heading::after {
     content: '';
     position: absolute;
     bottom: -10px;
@@ -41,7 +47,7 @@
     transform: translateX(-50%);
     width: 60px;
     height: 3px;
-    background: #ffba08;
+    background: linear-gradient(45deg, #6366f1, #ec4899);
     border-radius: 2px;
 }
 
@@ -58,19 +64,124 @@
 
 /* All_Education_Card */
 .All_Education_Card {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2.5rem;
+    padding: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.Education_Card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 0;
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: clamp(1em, 2vw, 2em);
-    margin: clamp(1em, 2vw, 2em) auto;
-    max-width: 1200px;
-    animation: fadeInUp 1s ease-out;
+    flex-direction: column;
+}
+
+.Education_Card:nth-child(1) { animation-delay: 0.2s; }
+.Education_Card:nth-child(2) { animation-delay: 0.4s; }
+.Education_Card:nth-child(3) { animation-delay: 0.6s; }
+
+.Education_Card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 40px rgba(99, 102, 241, 0.2);
+    border-color: rgba(99, 102, 241, 0.3);
+}
+
+.Education_Card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        45deg,
+        transparent,
+        rgba(99, 102, 241, 0.1),
+        transparent
+    );
+    transform: translateX(-100%);
+    transition: 0.6s;
+}
+
+.Education_Card:hover::before {
+    transform: translateX(100%);
+}
+
+.Education_Card_Image {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    margin-bottom: 1.5rem;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.Education_Card_Image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.4s ease;
+}
+
+.Education_Card:hover .Education_Card_Image img {
+    transform: scale(1.05);
+}
+
+.Education_Card_Content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.Education_Card h2 {
+    color: #f8f9fa;
+    font-size: clamp(1.2rem, 1.5vw, 1.5rem);
+    margin-bottom: 1rem;
+    background: linear-gradient(45deg, #6366f1, #ec4899);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1.4;
+}
+
+.Education_Card p {
+    color: #94a3b8;
+    font-size: clamp(1rem, 1.2vw, 1.2rem);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.Education_Card_Details {
+    margin-top: auto;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.Education_Card_Details span {
+    display: block;
+    color: #6366f1;
+    font-size: clamp(0.9rem, 1.1vw, 1.1rem);
+    margin-bottom: 0.5rem;
 }
 
 @keyframes fadeInUp {
     from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(30px);
     }
     to {
         opacity: 1;
@@ -78,160 +189,48 @@
     }
 }
 
-/* Edcuation_Card */
-.Edcuation_Card {
-    width: clamp(14em, 16em, 18em);
-    border: 2px solid rgba(255, 255, 255, 0.1);
-    border-radius: 15px;
-    color: #f8f9fa;
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    overflow: hidden;
-    opacity: 0;
-    animation: fadeInUp 0.8s ease-out forwards;
-    animation-delay: calc(var(--card-index, 0) * 0.2s);
-    position: relative;
-}
-
-.Edcuation_Card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-    transform: translateX(-100%);
-    transition: transform 0.6s ease;
-}
-
-.Edcuation_Card:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-    border-color: #ffba08;
-    background: rgba(255, 186, 8, 0.05);
-}
-
-.Edcuation_Card:hover::before {
-    transform: translateX(100%);
-}
-
-/* Edcuation_Card_Photo */
-.Edcuation_Card_Photo {
-    text-align: center;
-    overflow: hidden;
-    position: relative;
-}
-
-.Edcuation_Card_Photo::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 50%;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
-    pointer-events: none;
-}
-
-.Edcuation_Card_Photo img {
-    width: 100%;
-    height: clamp(10em, 12em, 14em);
-    object-fit: cover;
-    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    filter: brightness(0.9);
-}
-
-.Edcuation_Card:hover .Edcuation_Card_Photo img {
-    transform: scale(1.1);
-    filter: brightness(1);
-}
-
-/* Edcuation_Card_Text */
-.Edcuation_Card_Text {
-    padding: clamp(1em, 1.2em, 1.5em);
-    position: relative;
-    z-index: 1;
-}
-
-.Edcuation_Card_Text_Institute {
-    font-size: clamp(1.2em, 1.4vw, 1.4em);
-    font-weight: 600;
-    color: #ffba08;
-    margin-bottom: 0.5em;
-    line-height: 1.4;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease;
-}
-
-.Edcuation_Card_Text_Degree {
-    font-size: clamp(1em, 1.2vw, 1.2em);
-    color: #f8f9fa;
-    opacity: 0.9;
-    line-height: 1.4;
-    transition: all 0.3s ease;
-}
-
-.Edcuation_Card:hover .Edcuation_Card_Text_Institute {
-    transform: translateY(-2px);
-    text-shadow: 0 4px 8px rgba(255, 186, 8, 0.3);
-}
-
-.Edcuation_Card:hover .Edcuation_Card_Text_Degree {
-    opacity: 1;
-}
-
 @keyframes gradientShift {
-    0% {
-        background-position: 0% 0%;
-    }
-    100% {
-        background-position: 100% 100%;
-    }
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
 }
 
 /* Responsive Design */
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
     .All_Education_Card {
-        gap: clamp(1em, 1.5em, 2em);
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
     }
 }
 
 @media (max-width: 768px) {
-    .Edcuation_Card {
-        width: clamp(12em, 16em, 100%);
-        max-width: 16em;
+    .All_Education_Card {
+        grid-template-columns: 1fr;
+        padding: 1rem;
     }
     
-    .Edcuation_Section_Heading::after {
-        width: 40px;
+    .Education_Card {
+        padding: 1.5rem;
     }
-}
 
-@media (max-width: 480px) {
-    .Edcuation_Card {
-        width: 100%;
-        max-width: 14em;
-    }
-    
-    .Edcuation_Card_Text_Institute {
-        font-size: 1.2em;
-    }
-    
-    .Edcuation_Card_Text_Degree {
-        font-size: 1em;
+    .Education_Card_Image {
+        height: 200px;
     }
 }
 
 /* Add support for ultra-wide screens */
 @media (min-width: 1921px) {
     .Education {
-        padding: 5em 5% clamp(4em, 6vw, 6em);
+        padding: 5em 5%;
     }
     
     .All_Education_Card {
         max-width: 1800px;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .Education_Card_Image {
+        height: 300px;
     }
 }
 

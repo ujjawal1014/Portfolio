@@ -1,0 +1,198 @@
+.About {
+    min-height: 100vh;
+    width: 100%;
+    padding: clamp(6rem, 8vw, 8rem) clamp(2%, 4vw, 4%);
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.About::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 20%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(236, 72, 153, 0.15) 0%, transparent 50%);
+    pointer-events: none;
+    animation: gradientShift 15s ease infinite;
+}
+
+.About_Container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.About_Image {
+    position: relative;
+    animation: fadeInLeft 1s ease-out forwards;
+}
+
+.About_Image img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.About_Image::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: 20px;
+    bottom: 20px;
+    border: 2px solid rgba(99, 102, 241, 0.3);
+    border-radius: 20px;
+    z-index: -1;
+    transition: all 0.4s ease;
+}
+
+.About_Image:hover img {
+    transform: scale(1.02);
+    box-shadow: 0 12px 40px rgba(99, 102, 241, 0.3);
+}
+
+.About_Image:hover::before {
+    top: -15px;
+    left: -15px;
+    right: 15px;
+    bottom: 15px;
+    border-color: rgba(236, 72, 153, 0.3);
+}
+
+.About_Content {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 2.5rem;
+    animation: fadeInRight 1s ease-out forwards;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.About_Content h2 {
+    font-size: clamp(2rem, 2.5vw, 2.5rem);
+    margin-bottom: 1.5rem;
+    background: linear-gradient(45deg, #6366f1, #ec4899);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    display: inline-block;
+}
+
+.About_Content h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(45deg, #6366f1, #ec4899);
+    border-radius: 2px;
+}
+
+.About_Content p {
+    color: #94a3b8;
+    font-size: clamp(1rem, 1.2vw, 1.2rem);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.About_Stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.Stat_Item {
+    text-align: center;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.4s ease;
+}
+
+.Stat_Item:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(99, 102, 241, 0.2);
+}
+
+.Stat_Number {
+    font-size: clamp(2rem, 2.5vw, 2.5rem);
+    font-weight: 700;
+    color: #6366f1;
+    margin-bottom: 0.5rem;
+}
+
+.Stat_Label {
+    color: #94a3b8;
+    font-size: clamp(0.9rem, 1.1vw, 1.1rem);
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes gradientShift {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+@media (max-width: 1024px) {
+    .About_Container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .About_Image {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .About_Container {
+        gap: 2rem;
+    }
+
+    .About_Content {
+        padding: 1.5rem;
+    }
+
+    .About_Stats {
+        grid-template-columns: 1fr;
+    }
+} 

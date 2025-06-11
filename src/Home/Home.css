@@ -1,15 +1,16 @@
 /* Home */
 .Home {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    padding: clamp(14rem, 20vw, 20rem) clamp(2%, 4vw, 4%) clamp(4em, 6vw, 6em);
+    flex-direction: column;
+    padding: clamp(6rem, 8vw, 8rem) 0 clamp(4em, 6vw, 6em);
     width: 100%;
     min-height: 100vh;
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
     position: relative;
     overflow: hidden;
-    flex-direction: column;
+    z-index: 1;
 }
 
 .Home::before {
@@ -19,8 +20,19 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle at 50% 50%, rgba(255, 186, 8, 0.08) 0%, transparent 50%);
+    background: 
+        radial-gradient(circle at 20% 20%, rgba(99, 102, 241, 0.18) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(236, 72, 153, 0.18) 0%, transparent 50%),
+        linear-gradient(120deg, rgba(99,102,241,0.08) 0%, rgba(236,72,153,0.08) 100%);
     pointer-events: none;
+    animation: gradientShift 15s ease infinite;
+    z-index: 0;
+}
+
+@keyframes gradientShift {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
 }
 
 /* Home_Text_Section */
@@ -29,14 +41,19 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-left: 0;
+    padding: 2.5rem 2rem;
     color: #f8f9fa;
-    animation: fadeInLeft 1s ease-out;
     max-width: min(600px, 90%);
     margin-bottom: clamp(2em, 4vw, 4em);
     text-align: center;
     opacity: 0;
-    animation: fadeInLeft 1s ease-out forwards;
+    animation: fadeInLeft 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    background: rgba(255, 255, 255, 0.10);
+    backdrop-filter: blur(18px);
+    border-radius: 2rem;
+    border: 1.5px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px rgba(99, 102, 241, 0.10), 0 1.5px 8px rgba(236, 72, 153, 0.08);
+    z-index: 2;
 }
 
 @keyframes fadeInLeft {
@@ -68,16 +85,18 @@
 
 .Home_Text_Section_Name_Myname {
     font-size: clamp(2.8rem, 3.8vw, 3.8rem);
-    color: #00CAFC;
-    font-weight: 700;
-    text-shadow: 0 0 20px rgba(0, 202, 252, 0.3);
-    background: linear-gradient(45deg, #00CAFC, #41D9FF);
+    background: linear-gradient(45deg, #6366f1, #ec4899, #3b82f6);
+    background-size: 200% 200%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: glow 2s ease-in-out infinite alternate, slideInDown 1s ease-out 0.5s forwards;
+    animation: 
+        glow 2s ease-in-out infinite alternate,
+        slideInDown 1s ease-out 0.5s forwards,
+        gradientMove 8s ease infinite;
     margin: 0.5em 0;
     line-height: 1.2;
     opacity: 0;
+    filter: drop-shadow(0 2px 16px #6366f1aa);
 }
 
 @keyframes slideInDown {
@@ -113,153 +132,197 @@
 
 @keyframes glow {
     from {
-        text-shadow: 0 0 10px rgba(0, 202, 252, 0.3);
+        text-shadow: 0 0 10px rgba(99, 102, 241, 0.3);
     }
     to {
-        text-shadow: 0 0 20px rgba(0, 202, 252, 0.6);
+        text-shadow: 0 0 24px rgba(236, 72, 153, 0.5);
     }
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 /* Home_Photo_Section */
 .Home_Photo_Section {
-    height: clamp(20em, 28vw, 28em);
     margin-left: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    animation: fadeInRight 1s ease-out;
-}
-
-@keyframes fadeInRight {
-    from {
-        opacity: 0;
-        transform: translateX(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+    animation: fadeInRight 1.2s cubic-bezier(0.4, 0, 0.2, 1) 0.3s both;
+    z-index: 2;
 }
 
 .Home_Photo_Section img {
-    height: clamp(20em, 28vw, 28em);
-    border-radius: 30% 70% 0% 100% / 0% 0% 100% 100%;
-    background-color: #41D9FF;
-    padding-right: clamp(1em, 3vw, 3em);
-    transition: transform 0.3s ease;
-    box-shadow: 0 10px 30px rgba(0, 202, 252, 0.2);
+    height: clamp(10em, 28vw, 28em);
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    background: linear-gradient(45deg, #6366f1, #ec4899);
+    padding: 0.5rem;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3), 0 0 0 2px rgba(255, 255, 255, 0.1);
     object-fit: cover;
+    animation: float 6s ease-in-out infinite;
+    border: 4px solid transparent;
+    background-clip: padding-box, border-box;
+    background-origin: border-box;
+    position: relative;
+}
+
+.Home_Photo_Section img::after {
+    content: '';
+    position: absolute;
+    inset: -6px;
+    border-radius: 40% 60% 60% 40% / 40% 40% 60% 60%;
+    background: linear-gradient(120deg, #6366f1, #ec4899, #3b82f6);
+    z-index: -1;
+    filter: blur(8px);
+    opacity: 0.7;
+    animation: gradientMove 8s ease infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
 }
 
 .Home_Photo_Section img:hover {
-    transform: scale(1.02);
+    transform: scale(1.07) rotate(2deg);
+    box-shadow: 0 20px 40px rgba(99, 102, 241, 0.4), 0 0 0 4px rgba(255, 255, 255, 0.2);
+    filter: brightness(1.08) saturate(1.2);
 }
 
 /* Home_Text_Section_Links */
 .Home_Text_Section_Links {
     display: flex;
-    justify-content: space-between;
-    width: clamp(9em, 11vw, 11em);
+    justify-content: center;
+    gap: 1.5em;
     margin: clamp(1em, 1.5vw, 1.5em) 0;
     color: #f8f9fa;
     opacity: 0;
     animation: fadeInUp 1s ease-out 1s forwards;
 }
 
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .Home_Text_Section_Links a {
-    font-size: clamp(1.6em, 1.8vw, 1.8em);
     color: #f8f9fa;
-    transition: all 0.3s ease;
+    font-size: 1.3em;
+    border-radius: 50%;
+    padding: 0.5em;
+    background: rgba(99, 102, 241, 0.08);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 8px rgba(99, 102, 241, 0.08);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .Home_Text_Section_Links a:hover {
-    color: #ffba08;
-    transform: translateY(-3px);
+    background: linear-gradient(45deg, #6366f1, #ec4899);
+    color: #fff;
+    transform: scale(1.15) rotate(-6deg);
+    box-shadow: 0 4px 16px rgba(236, 72, 153, 0.18);
+}
+
+.Home_Text_Section_Links a::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -6px;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #6366f1, #ec4899);
+    border-radius: 2px;
+    transition: width 0.3s;
+    transform: translateX(-50%);
+}
+
+.Home_Text_Section_Links a:hover::after {
+    width: 60%;
 }
 
 /* Home_Text_Section_Resume_Button */
 .Home_Text_Section_Resume_Button {
-    margin-top: clamp(1em, 1.5vw, 1.5em);
-    background-color: transparent;
-    font-size: clamp(1.1rem, 1.3vw, 1.3rem);
-    color: #ffba08;
-    border: solid 2px #ffba08;
-    padding: clamp(0.6em, 0.8vw, 0.8em) clamp(1.2em, 1.5vw, 1.5em);
-    width: auto;
-    border-radius: 15px;
-    transition: all 0.3s ease;
+    margin-top: 1.5em;
+    padding: 0.9em 2.2em;
+    font-size: 1.1em;
+    font-weight: 600;
+    border-radius: 2em;
+    background: linear-gradient(90deg, #6366f1, #ec4899);
+    color: #fff;
+    border: none;
+    box-shadow: 0 2px 8px rgba(99, 102, 241, 0.12);
     cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
-    text-decoration: none;
-    display: inline-block;
-    text-align: center;
-    opacity: 0;
-    animation: fadeInUp 1s ease-out 1.2s forwards;
+    z-index: 1;
 }
 
 .Home_Text_Section_Resume_Button:hover {
-    background-color: #ffba08;
-    color: #1a1a1a;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(255, 186, 8, 0.3);
+    background: linear-gradient(90deg, #ec4899, #6366f1);
+    transform: translateY(-2px) scale(1.04);
+    box-shadow: 0 6px 24px rgba(236, 72, 153, 0.18);
 }
 
 .Home_Text_Section_Resume_Button::before {
     content: '';
     position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0;
-    height: 0;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    transition: width 0.6s ease, height 0.6s ease;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(120deg, #6366f1, #ec4899, #3b82f6);
+    opacity: 0.15;
+    z-index: -1;
+    transition: opacity 0.3s;
 }
 
 .Home_Text_Section_Resume_Button:hover::before {
-    width: 300px;
-    height: 300px;
+    opacity: 0.3;
 }
 
-/* Home_Text_Section_Resume_Contact */
 .Home_Text_Section_Resume_Contact {
-    display: flex;
-    width: 100%;
-    max-width: min(18em, 90%);
-    justify-content: space-between;
-    margin-top: clamp(1.5em, 2vw, 2em);
-    gap: clamp(0.8em, 1vw, 1em);
+    margin-top: 1.2em;
+    color: #6366f1;
+    font-weight: 500;
+    font-size: 1.1em;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: color 0.3s;
 }
 
-/* Responsive Design */
+.Home_Text_Section_Resume_Contact:hover {
+    color: #ec4899;
+    text-decoration: underline;
+}
+
 @media (min-width: 1025px) {
     .Home {
         flex-direction: row;
         justify-content: space-between;
-        align-items: flex-start;
-        padding: clamp(14rem, 16vw, 16rem) clamp(2%, 4vw, 4%) clamp(4em, 6vw, 6em);
+        align-items: center;
+        padding: clamp(6rem, 8vw, 8rem) clamp(2%, 4vw, 4%) clamp(4em, 6vw, 6em);
     }
-
     .Home_Text_Section {
-        align-items: start;
-        padding-left: clamp(1%, 2vw, 2%);
+        align-items: flex-start;
+        text-align: left;
         margin-bottom: 0;
-        text-align: left;
-        flex-grow: 1;
+        margin-right: 2vw;
     }
-
-    .Home_Text_Section_Name {
-        text-align: left;
-    }
-
     .Home_Photo_Section {
-        margin-left: clamp(2em, 4vw, 4em);
-        margin-right: 0;
-        flex-shrink: 0;
-        align-self: flex-start;
+        margin-left: 2vw;
     }
 }
 
@@ -288,16 +351,5 @@
     
     .Home_Text_Section {
         max-width: 800px;
-    }
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
     }
 }

@@ -5,7 +5,7 @@ import "./Home.css";
 export default function Home() {
   return (
     <>
-      <div className="Home" id="Home">
+      <div className="Home" id="home">
         <Home_Text_Section />
         <Home_Photo_Section />
       </div>

@@ -22,7 +22,7 @@ import "./Skills.css";
 export default function Skills() {
   return (
     <>
-      <div className="Skills" id="Skills">
+      <div className="Skills" id="skills">
         <Skills_Heading />
         <br></br>
         <h1 className="Skills_Type_Name">1.Web Development</h1>

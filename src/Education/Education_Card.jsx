@@ -4,16 +4,24 @@ export default function Education_Card({
   Image,
   Institue,
   Degree,
+  Year,
+  Location,
 }) {
   return (
-    <>
-      <div className="Edcuation_Card">
-        <Education_Card_Photo image={Image} />
-        <Education_Card_Text
-          Institue={Institue}
-          Degree={Degree}
-        />
+    <div className="Education_Card">
+      <div className="Education_Card_Image">
+        <img src={Image} alt={Institue} />
       </div>
-    </>
+      <div className="Education_Card_Content">
+        <div>
+          <h2>{Institue}</h2>
+          <p>{Degree}</p>
+        </div>
+        <div className="Education_Card_Details">
+          <span>{Year}</span>
+          <span>{Location}</span>
+        </div>
+      </div>
+    </div>
   );
 }

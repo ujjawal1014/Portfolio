@@ -4,6 +4,9 @@ import Project_Card_Role from "./Project_Card_Role";
 import Project_Name from "./Project_Name";
 
 export default function Project_Card({
+  Projct_Number,
+  MyRole,
+  Name,
   image,
   Tool1,
   Tool2,
@@ -17,37 +20,55 @@ export default function Project_Card({
   Color4,
   Color5,
   Color6,
-  Projct_Number,
-  Name,
-  MyRole,
+  ProjectLink,
 }) {
   return (
-    <>
-      <div className="Project_Card_Complete">
-        <div className="Project_Name">
-          <Project_Name Project_Number={Projct_Number} Name={Name} />
+    <a href={ProjectLink} target="_blank" rel="noopener noreferrer" className="Project_Card_Link">
+      <div className="Project_Card">
+        <div className="Project_Number">Project {Projct_Number}</div>
+        <div className="Project_Image">
+          <img src={image} alt={Name} />
+          <div className="Project_Overlay">
+            <span className="View_Project">View Project</span>
+          </div>
         </div>
-        <div className="Project_Card">
-          <a href="">
-            <Project_Card_Photo image={image} />
-          </a>
-          <Project_Card_Role Myrole={MyRole} />
-          <Project_Card_Tools
-            Tool1={Tool1}
-            Tool2={Tool2}
-            Tool3={Tool3}
-            Tool4={Tool4}
-            Tool5={Tool5}
-            Tool6={Tool6}
-            Color1={Color1}
-            Color2={Color2}
-            Color3={Color3}
-            Color4={Color4}
-            Color5={Color5}
-            Color6={Color6}
-          />
+        <div className="Project_Content">
+          <h3 className="Project_Title">{Name}</h3>
+          <p className="Project_Description">{MyRole}</p>
+          <div className="Project_Tools">
+            {Tool1 && (
+              <div className="Tool_Icon" style={{ color: Color1 }}>
+                {Tool1}
+              </div>
+            )}
+            {Tool2 && (
+              <div className="Tool_Icon" style={{ color: Color2 }}>
+                {Tool2}
+              </div>
+            )}
+            {Tool3 && (
+              <div className="Tool_Icon" style={{ color: Color3 }}>
+                {Tool3}
+              </div>
+            )}
+            {Tool4 && (
+              <div className="Tool_Icon" style={{ color: Color4 }}>
+                {Tool4}
+              </div>
+            )}
+            {Tool5 && (
+              <div className="Tool_Icon" style={{ color: Color5 }}>
+                {Tool5}
+              </div>
+            )}
+            {Tool6 && (
+              <div className="Tool_Icon" style={{ color: Color6 }}>
+                {Tool6}
+              </div>
+            )}
+          </div>
         </div>
       </div>
-    </>
+    </a>
   );
 }

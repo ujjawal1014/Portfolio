@@ -1,8 +1,9 @@
 /* Achievement */
 .Achivement {
-    padding: clamp(1.5em, 5vw, 4em) clamp(1%, 4vw, 4%);
+    min-height: 100vh;
     width: 100%;
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    padding: clamp(6rem, 8vw, 8rem) clamp(2%, 4vw, 4%);
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
     position: relative;
     overflow: hidden;
 }
@@ -14,18 +15,188 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle at 50% 50%, rgba(255, 186, 8, 0.08) 0%, transparent 50%);
+    background: 
+        radial-gradient(circle at 20% 20%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(236, 72, 153, 0.15) 0%, transparent 50%);
     pointer-events: none;
+    animation: gradientShift 15s ease infinite;
 }
 
 /* Achievement_Heading */
 .Achivement_Heading {
-    font-size: clamp(2.2em, 2.8vw, 2.8em);
-    color: #ffba08;
     text-align: center;
-    margin-bottom: clamp(1em, 3vw, 1.5em);
-    text-shadow: 0 0 10px rgba(255, 186, 8, 0.3);
-    animation: fadeInDown 1s ease-out;
+    margin-bottom: 3rem;
+    position: relative;
+    z-index: 1;
+}
+
+.Achivement_Heading h2 {
+    font-size: clamp(2rem, 2.5vw, 2.5rem);
+    background: linear-gradient(45deg, #6366f1, #ec4899);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1rem;
+    animation: fadeInDown 1s ease-out forwards;
+}
+
+.Achivement_Heading::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(45deg, #6366f1, #ec4899);
+    border-radius: 2px;
+}
+
+/* All_Achievement_Card */
+.Achivement_Grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2.5rem;
+    padding: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+/* Achievement_Card */
+.Achivement_Card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.Achivement_Card:nth-child(1) { animation-delay: 0.1s; }
+.Achivement_Card:nth-child(2) { animation-delay: 0.2s; }
+.Achivement_Card:nth-child(3) { animation-delay: 0.3s; }
+.Achivement_Card:nth-child(4) { animation-delay: 0.4s; }
+
+.Achivement_Card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 40px rgba(99, 102, 241, 0.2);
+    border-color: rgba(99, 102, 241, 0.3);
+}
+
+.Achivement_Card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        45deg,
+        transparent,
+        rgba(99, 102, 241, 0.1),
+        transparent
+    );
+    transform: translateX(-100%);
+    transition: 0.6s;
+}
+
+.Achivement_Card:hover::before {
+    transform: translateX(100%);
+}
+
+/* Achievement_Card_Photo */
+.Achivement_Image {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+}
+
+.Achivement_Image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.4s ease;
+}
+
+.Achivement_Card:hover .Achivement_Image img {
+    transform: scale(1.05);
+}
+
+/* Achievement_Card_Text */
+.Achivement_Category {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background: rgba(99, 102, 241, 0.1);
+    color: #6366f1;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    z-index: 2;
+}
+
+.Achivement_Content {
+    padding: 2rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.Achivement_Header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.Achivement_Title {
+    font-size: clamp(1.4rem, 1.6vw, 1.6rem);
+    color: #f8f9fa;
+    margin: 0;
+    background: linear-gradient(45deg, #6366f1, #ec4899);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.Achivement_Date {
+    color: #6366f1;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 0.3rem 0.8rem;
+    background: rgba(99, 102, 241, 0.1);
+    border-radius: 15px;
+    border: 1px solid rgba(99, 102, 241, 0.2);
+}
+
+.Achivement_Description {
+    color: #94a3b8;
+    font-size: clamp(1rem, 1.1vw, 1.1rem);
+    line-height: 1.6;
+    margin: 0;
+    flex: 1;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @keyframes fadeInDown {
@@ -39,172 +210,55 @@
     }
 }
 
-/* All_Achievement_Card */
-.All_Achivement_Card {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: clamp(1em, 2vw, 2em);
-    margin: clamp(1em, 2vw, 2em) auto;
-    max-width: 1200px;
-    animation: fadeInUp 1s ease-out;
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Achievement_Card */
-.Achivement_Card {
-    width: clamp(280px, 20em, 350px);
-    border: 2px solid rgba(255, 255, 255, 0.1);
-    border-radius: 15px;
-    color: #f8f9fa;
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    transition: all 0.3s ease;
-    overflow: hidden;
-    opacity: 0;
-    animation: fadeInUp 0.8s ease-out forwards;
-    animation-delay: calc(var(--card-index, 0) * 0.2s);
-}
-
-.Achivement_Card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    border-color: #ffba08;
-    background: rgba(255, 186, 8, 0.1);
-}
-
-/* Achievement_Card_Photo */
-.Achivement_Card_Photo {
-    text-align: center;
-    overflow: hidden;
-}
-
-.Achivement_Card_Photo img {
-    width: 100%;
-    height: clamp(12em, 14em, 16em);
-    object-fit: cover;
-    transition: transform 0.3s ease;
-    opacity: 0;
-    animation: zoomIn 0.8s ease-out 0.5s forwards;
-}
-
-.Achivement_Card:hover .Achivement_Card_Photo img {
-    transform: scale(1.05);
-}
-
-/* Achievement_Card_Text */
-.Achivement_Card_Text {
-    padding: clamp(1em, 1.2em, 1.5em);
-}
-
-.Achivement_Card_Text_Event_Name {
-    font-size: clamp(1.3em, 1.5vw, 1.5em);
-    color: #ffba08;
-    margin-bottom: 0.8em;
-    font-weight: 600;
-    line-height: 1.4;
-    opacity: 0;
-    animation: slideInDown 0.8s ease-out 0.7s forwards;
-}
-
-.Achivement_Card_Text_About_Event {
-    font-size: clamp(1em, 1.1vw, 1.1em);
-    font-weight: 400;
-    line-height: 1.6;
-    color: #f8f9fa;
-    opacity: 0;
-    animation: fadeIn 0.8s ease-out 0.9s forwards;
-}
-
-@keyframes zoomIn {
-    from {
-        opacity: 0;
-        transform: scale(0.95);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-@keyframes slideInDown {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 0.9;
-    }
+@keyframes gradientShift {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
 }
 
 /* Responsive Design */
-@media (max-width: 1024px) {
-    .All_Achivement_Card {
-        gap: clamp(1em, 1.5em, 2em);
+@media (max-width: 1200px) {
+    .Achivement_Grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
     }
 }
 
 @media (max-width: 768px) {
-    .Achivement_Card {
-        width: clamp(250px, 18em, 300px);
+    .Achivement_Grid {
+        grid-template-columns: 1fr;
+        padding: 1rem;
     }
     
-    .Achivement_Heading {
-        font-size: 2.2em;
-        margin-bottom: 1em;
+    .Achivement_Content {
+        padding: 1.5rem;
     }
-    
-    .Achivement_Card_Text_Event_Name {
-        font-size: 1.3em;
+
+    .Achivement_Image {
+        height: 200px;
     }
-    
-    .Achivement_Card_Text_About_Event {
-        font-size: 1em;
+
+    .Achivement_Header {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .Achivement_Date {
+        align-self: flex-start;
     }
 }
 
-@media (max-width: 480px) {
-    .Achivement_Card {
-        width: 100%;
-        max-width: 280px;
-    }
-    
-    .Achivement_Card_Text_Event_Name {
-        font-size: 1.2em;
-    }
-    
-    .Achivement_Card_Text_About_Event {
-        font-size: 0.95em;
-    }
-}
-
-/* Add support for ultra-wide screens */
 @media (min-width: 1921px) {
     .Achivement {
         padding: 5em 5%;
     }
     
-    .All_Achivement_Card {
+    .Achivement_Grid {
         max-width: 1800px;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .Achivement_Image {
+        height: 300px;
     }
 }
